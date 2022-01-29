@@ -6,7 +6,7 @@ const main = async () => {
     // Init mongodb connection
     await initMongoDBConnection()
 
-    server.listen(8000).then(({ url }) => {
+    server.listen(process.env.PORT || 4000).then(({ url }) => {
       console.log(`Server is listening at ${url}`)
     })
   } catch (e) {
